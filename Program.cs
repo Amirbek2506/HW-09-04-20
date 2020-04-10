@@ -7,7 +7,8 @@ namespace MyprojecsApp
         const string pro = "0000";
         const string exp = "0001";
         static void Main(string[] args)
-        {
+        {/*
+                                             //Задача 1
             Console.WriteLine("Вводите ключь лицензии: ");
             string License = Console.ReadLine();
 
@@ -31,6 +32,20 @@ namespace MyprojecsApp
                 }
             }
 
+
+                                        //Задача 2
+
+            IPlayable Track_1 = new Player();
+            IRecodable Track_2= new Player();
+            Track_1.Play();
+            Track_1.Pause();
+            Track_1.Stop();
+
+            Track_2.Record();
+            Track_2.Pause();
+            Track_2.Stop();
+
+            Console.ReadKey();*/
         }
     }
     class DocumentWorker
@@ -66,5 +81,41 @@ namespace MyprojecsApp
             Console.WriteLine("Документ сохранен в новом формате");
         }
     }
+    interface IPlayable
 
+    {
+        void Play();
+        void Pause();
+        void Stop();
+    }
+
+    interface IRecodable
+
+    {
+        void Record();
+        void Pause();
+        void Stop();
+    }
+
+    public class Player : IPlayable, IRecodable
+    {
+        public void Play()
+        {
+            Console.WriteLine("Play melody");
+        }
+
+        public void Pause()
+        {
+            Console.WriteLine("Pause melody");
+        }
+
+        public void Stop()
+        {
+            Console.WriteLine("Stop melody");
+        }
+        public void Record()
+        {
+            Console.WriteLine("Record melody");
+        }
+    }
 }
